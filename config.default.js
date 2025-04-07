@@ -194,7 +194,9 @@ export default {
     gridFSEnabled: getBoolean(process.env.ME_CONFIG_SITE_GRIDFS_ENABLED, false),
 
     // logger: this object will be used to initialize router logger (morgan)
-    logger: {},
+    logger: {
+      format: process.env.ME_CONFIG_LOG_FORMAT || 'combined'
+    },
 
     // confirmDelete: if confirmDelete is set to 'true', a modal for confirming deletion is
     // displayed before deleting a document/collection
